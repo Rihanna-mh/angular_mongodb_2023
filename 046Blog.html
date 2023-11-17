@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>046Blog</title>
+    <link rel="stylesheet" href="045Blog.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js" integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="045Blog.js"></script>
+</head>
+<body>
+    <div data-ng-app="my_app" class="row"  >
+        <div class="col-3 text-center"></div>
+
+        <div class="col-6">
+            <div data-ng-controller="my_cntrl2">
+                <h1>Search and Find Blogs</h1>
+
+                <div class="dropdown-container">
+                    <label for="industryname">Find by Industry:</label>
+                    <select name="industryname" id="industryname" ng-model="selectedOption" ng-change="onSelectOption(selectedOption)">
+                        <option value="Health">Health</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
+                        <option value="Insurance">Insurance</option>
+                        <option value="Tech">Tech</option>
+                    </select>
+                </div>
+                <br>
+                <div class="record" ng-repeat="record in records">
+                    <h1 class="Mainheading">{{record.Headline}}</h1>
+                    <span ng-show="selectedOption == record.Industry">By:</span>
+                    <span>{{record.Author_name}}</span>
+                    <br>
+                    <p>{{record.Introduction}}</p>
+                    <h2>{{record.H2_1}}</h2>
+                    <p>{{record.H2_1_para}}</p>
+                    <h2>{{record.H2_2}}</h2>
+                    <p>{{record.H2_2_para}}</p>
+                    <h2>{{record.H2_3}}</h2>
+                    <p>{{record.H2_3_para}}</p>
+                    <h2>{{record.H2_4}}</h2>
+                    <p>{{record.H2_4_para}}</p>
+                    <h2>{{record.H2_5}}</h2>
+                    <p>{{record.H2_5_para}}</p>
+                    <h2 ng-show="selectedOption == record.Industry">To Wrap Up</h2>
+                    <p>{{record.Conclusion}}</p>
+                </div>    
+            </div>
+        </div>
+
+        <div class="col-3 text-center"></div>
+    </div>
+</body> 
+</html> 

@@ -1,0 +1,11 @@
+.ng-empty{
+    background-color: lightpink;
+}
+
+.ng-not-empty{
+    background-color: lightblue;
+}
+
+.Mainheading{
+    color:blue
+}
